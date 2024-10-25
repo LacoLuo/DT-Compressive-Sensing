@@ -26,7 +26,7 @@ python train_loop_dict_size.py
 python train_loop_dict_size_finetune.py
 ```
 
-**ML Model Evaluation**
+**Plot the results**
 1. Plot the RF beam prediction accuracy vs. numbers of measurement vectors
 ```
 python plot_performance_dict_size.m
@@ -41,8 +41,6 @@ python plot_performance_num_data.m
    python inference.py --load_model_path ckpt/ckpt_name
    ```
    - Run `plot_meas_vecs.m` to plot the beam patterns.
-
-**Plot the results**
 
 If you have any questions regarding the code, please contact [Hao Luo](mailto:h.luo@asu.edu)
 

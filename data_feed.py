@@ -10,7 +10,7 @@ from torch.utils.data import Dataset, DataLoader
 def create_samples(data_root, csv_path, random_state, num_data_point, portion, select_data_idx):
     # Load channel data and beam indices
     channel = loadmat(os.path.join(data_root, "dataset.mat"))['all_channel']
-    beam_idx = loadmat(os.path.join(data_root, "dataset.mat"))['all_beam_idx'] - 1 # Start from 0
+    beam_idx = loadmat(os.path.join(data_root, "dataset.mat"))['all_beam_idx']
     
     # Load data indices
     if select_data_idx is None:

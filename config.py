@@ -1,13 +1,13 @@
 class configurations(object):
     def __init__(self):
         # Dataset param.
-        self.real_data_root = "DeepMIMO/Datasets/Boston5G_3p5_target"
-        self.synth_data_root = "DeepMIMO/Datasets/Boston5G_3p5_nofoliage_shifted_1"
+        self.real_data_root = "datasets/DT1"
+        self.synth_data_root = "datasets/DT1"
         self.train_csv = "train_data_idx.csv"
         self.test_csv = "test_data_idx.csv"
         self.N_BS = 32
         self.N_MS = 1
-        self.M_BS = 8
+        self.M_BS = 4
         self.M_MS = 1
 
         # Train param.

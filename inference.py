@@ -16,9 +16,9 @@ if __name__ == '__main__':
     config.load_model_path = args.load_model_path
     print('config:\n', vars(config))
 
-    config.M_BS = 16
+    config.M_BS = 4
     
     ret = test_process(config)
     BS_meas_vectors = ret["BS_meas_vecs"]
     mdic = {"BS_meas_vecs": BS_meas_vectors}
-    savemat("./meas_vecs_M_8.mat", mdic)
+    savemat(f"./meas_vecs_M_{config.M_BS}.mat", mdic)

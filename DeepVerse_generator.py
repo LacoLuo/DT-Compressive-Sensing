@@ -83,16 +83,18 @@ if __name__ == "__main__":
     param_manager.params["comm"]["ue_antenna"]["FoV"] = [360, 180]
 
     # pprint(param_manager.params)
+
+    # Generate a dataset
+    dataset = Dataset(param_manager)
+
+    # Generate DFT codebook
     num_tx_ant = param_manager.params["comm"]["bs_antenna"]["shape"][0]
     num_rx_ant = param_manager.params["comm"]["ue_antenna"]["shape"][0]
     F_CB, _ = UPA_codebook_generator_DFT(num_tx_ant, 1, 1)
     print("Codebook Shape:", F_CB.shape)
 
-    # Generate a dataset
-    dataset = Dataset(param_manager)
-    num_scene = len(dataset.params['scenes'])
-
     # Define the output variables
+    num_scene = len(dataset.params['scenes'])
     all_beam_idx = np.zeros((num_scene, 1))
     all_channel = np.zeros((num_scene, num_rx_ant, num_tx_ant), dtype=np.complex64)
     

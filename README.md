@@ -7,40 +7,34 @@
 # Code Package Content
 
 **Prepare the dataset**
-1. The data used in this package can be found in this [Dropbox folder](https://www.dropbox.com/scl/fo/5u29i71qptn23wvykb88d/AA-9db1geL73lkdlH6gqx3o?rlkey=v8bvb2kdx5nayc12yt2d4ahpt&st=b03julkg&dl=0). Please download these files to the `DeepMIMO` repository.
-2. Set the scenario and other system parameters in `parameters.m`.
-3. Run `DeepMIMO_Dataset_Generator.m` to generate channel data of the scenario.
-4. Run `process_raw_data.m` to construct the dataset.
+1. Download DeepVerse scenario
+```
+python DeepVerse_downloader.py
+```
+2. Generate dataset
+```
+python DeepVerse_generator.py
+```
 
 **ML Model Training**
 1. Generate training and testing datasets
 ```
 python gen_csv.py
 ```
-2. Run the training sessions with varying numbers of measurement vectors
+2. Run the training session
 ```
-python train_loop_dict_size.py
-```
-3. Refine the models pretrained on DT data
-```
-python train_loop_dict_size_finetune.py
+python train.py
 ```
 
 **Plot the results**
-1. Plot the RF beam prediction accuracy vs. numbers of measurement vectors
+1. Obtain the measurement vectors from the model weights.
 ```
-python plot_performance_dict_size.m
+python inference.py --load_model_path ckpt/ckpt_name
 ```
-2. Plot the RF beam prediction accuracy vs. numbers of refining data points
+2. Plot the beam patterns.
 ```
-python plot_performance_num_data.m
+python plot_meas_vecs.py
 ```
-3. Plot the beam patterns of the learned measurement vectors
-   - Obtain the measurement vectors from the model weights.
-   ```
-   python inference.py --load_model_path ckpt/ckpt_name
-   ```
-   - Run `plot_meas_vecs.m` to plot the beam patterns.
 
 If you have any questions regarding the code, please contact [Hao Luo](mailto:h.luo@asu.edu)
 

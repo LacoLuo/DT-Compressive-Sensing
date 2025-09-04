@@ -27,14 +27,8 @@ python train_loop_dict_size_finetune.py
 ```
 
 **Plot the results**
-1. Plot the RF beam prediction accuracy vs. numbers of measurement vectors
-```
-python plot_performance_dict_size.m
-```
-2. Plot the RF beam prediction accuracy vs. numbers of refining data points
-```
-python plot_performance_num_data.m
-```
+1. Run `plot_performance_dict_size.m` to plot the RF beam prediction accuracy vs. numbers of measurement vectors
+2. Run `plot_performance_num_data.m` to plot the RF beam prediction accuracy vs. numbers of refining data points
 3. Plot the beam patterns of the learned measurement vectors
    - Obtain the measurement vectors from the model weights.
    ```
